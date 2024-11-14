@@ -1,0 +1,189 @@
+:root{
+    --primary: white;
+    --bg-color: #254336;
+    --bg-envelope-color: #f5edd1;
+    --envelope-tab: #ecdeb8;
+    --envelope-cover: #e6cfa7;
+    --shadow-color: #1c1c1c;
+    --heart-color: #c2465d;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    height: 40vh;
+    display: grid;
+    place-items: center;
+    align-items: flex end;
+    
+  }
+  .container > .envelope-wrapper {
+    background: var(--bg-envelope-color);
+    box-shadow: 0 0 40px var(--shadow-color);
+
+  }
+  .envelope-wrapper > .envelope {
+    position: relative;
+    width: 350px;
+    height: 250px;
+  }
+  .envelope-wrapper > .envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 130px solid var(--envelope-tab);
+    border-right: 175px solid transparent;
+    border-left: 175px solid transparent;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0.7s;
+  }
+  .envelope-wrapper > .envelope::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 0px;
+    height: 10px;
+    border-top: 130px solid transparent;
+    border-right: 175px solid var(--envelope-cover);
+    border-bottom: 150px solid var(--envelope-cover);
+    border-left: 175px solid var(--envelope-cover);
+  }
+  .sincerely {
+    text-align: right;
+  }
+  
+  .envelope > .letter {
+    position: absolute;
+    right: 0%;
+    bottom: 0;
+    width: 90%;
+    height: 80%;
+    background: var(--primary);
+    text-align: center;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 5px var(--shadow-color);
+    padding: 20px 10px;
+    border-radius: 24px;
+  }
+  
+  .envelope > .letter > .text {
+    font-family: "Caveat", cursive;
+    font-style: normal;
+    color: var(--txt-color);
+    text-align: center; /* Center-align the text */
+    font-size: 11px;
+    padding-right: 2px;
+    position: relative; /* To position elements inside the .text block */
+  }
+  
+  .text strong {
+    font-size: 12px;
+    
+  }
+  
+  .heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--heart-color);
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(45deg);
+    transition: transform 0.5s ease-in-out 1s;
+    box-shadow: 0 1px 6px var(--shadow-color);
+    cursor: pointer;
+  }
+  .heart:before, 
+  .heart:after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--heart-color);
+    border-radius: 50%;
+  }
+  .heart:before {
+    top: -7.5px;
+  }
+  .heart:after {
+    right: 7.5px;
+  }
+  .flap > .envelope:before {
+    transform: rotateX(180deg);
+    z-index: 0; 
+  }
+  .flap > .envelope > .letter {
+    bottom: 350px;
+    transform: scale(1.5);
+    transition-delay: 1s;
+    width: 35vh;
+    height: 30vh;
+    
+  }
+
+
+  .flap > .heart {
+    transform: rotate(90deg);
+    transition-delay: 0.4s;
+  }
+  next-button {
+    position: absolute; /* Position the button relative to .letter */
+    bottom: 0px; /* Distance from the bottom of .letter */
+    right: 0px; /* Distance from the right of .letter */
+    background-color: var(--heart-color);
+    color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: "Caveat", cursive;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 1px 6px var(--shadow-color);
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+
+  }
+  .special-button {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    height: 4vh; /* Full viewport height */
+    
+}
+
+.special-button {
+    background-color: #ff69b4; /* Pinkish color */
+    border: none;
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.special-button button:hover {
+    transform: scale(1.1);
+    background-color: #ff4081;
+}
+
+  
+next-button:hover {
+    background-color: #b2334a; /* Darker shade for hover effect */
+  }
+.Letterimage {
+        width: 150px; /* Set the width */
+        height: 130px; /* Set the height */
+      }
+
+      
+  
